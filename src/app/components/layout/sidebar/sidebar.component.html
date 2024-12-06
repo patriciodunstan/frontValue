@@ -1,1 +1,12 @@
-<p>sidebar works!</p>
+<nav class="sidenav">
+  <ul class="nav-list">
+    <li class="nav-item"><a href="#" class="active">Dashboard</a></li>
+    <li class="nav-header">Companies</li>
+    <li class="nav-item" *ngFor="let company of companies" (click)="selectCompany(company)">
+      <a href="#">{{company.name}}</a>
+    </li>
+    <li class="nav-header">Analysis</li>
+    <li class="nav-item"><a href="#">Financial Metrics</a></li>
+    <li class="nav-item"><a href="#">Market News</a></li>
+  </ul>
+</nav>

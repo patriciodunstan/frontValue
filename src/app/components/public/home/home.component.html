@@ -1,0 +1,28 @@
+<main class="content-area">
+  <div class="charts-section">
+    <div class="chart-container">
+      <h3>Stock Performance</h3>
+      <apx-chart #chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
+        [title]="chartOptions.title">
+      </apx-chart>
+    </div>
+    <div class="chart-container">
+      <h3>Market Trends</h3>
+      <apx-chart #trendChart [series]="trendOptions.series" [chart]="trendOptions.chart" [xaxis]="trendOptions.xaxis"
+        [title]="trendOptions.title">
+      </apx-chart>
+    </div>
+  </div>
+
+  <div class="news-section">
+    <h3>Financial News</h3>
+    <div class="news-card" *ngFor="let news of newsItems">
+      <img [src]="news.image" alt="News Image" class="news-image">
+      <div class="news-content">
+        <h4>{{ news.title }}</h4>
+        <p>{{ news.summary }}</p>
+        <span class="news-date">{{ news.date }}</span>
+      </div>
+    </div>
+  </div>
+</main>

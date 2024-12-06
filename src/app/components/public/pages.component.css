@@ -1,0 +1,16 @@
+.finance-app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  margin-top: 64px;
+  height: calc(100vh - 64px);
+  width: 100%;
+}
+
+#home{
+  width: 100%;
+}

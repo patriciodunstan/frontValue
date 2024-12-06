@@ -1,0 +1,34 @@
+.sidenav {
+  width: 250px;
+  background: #f8f9fa;
+  padding: 1rem 0;
+  height: 100%;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-header {
+  padding: 1rem 1.5rem;
+  font-weight: bold;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.nav-item a {
+  padding: 0.75rem 1.5rem;
+  display: block;
+  color: #495057;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.nav-item a:hover,
+.nav-item a.active {
+  background-color: #e9ecef;
+  border-left: 4px solid #0d6efd;
+}
