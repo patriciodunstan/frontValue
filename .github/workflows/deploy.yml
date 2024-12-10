@@ -14,21 +14,30 @@ jobs:
           - name: Checkout repository
             uses: actions/checkout@v3
 
-          # Paso 2: Configurar Node.js (ajusta la versión según tu proyecto)
+          # Paso 2: Cache de dependencias de Node.js
+          - name: Cache Node.js modules
+            uses: actions/cache@v3
+            with:
+              path: ~/.npm
+              key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+              restore-keys: |
+                ${{ runner.os }}-node-
+
+          # Paso 3: Configurar Node.js (ajusta la versión según tu proyecto)
           - name: Setup Node.js
             uses: actions/setup-node@v3
             with:
-              node-version: '16'
+              node-version: '20'
 
-          # Paso 3: Instalar dependencias
+          # Paso 4: Instalar dependencias
           - name: Install dependencies
             run: npm install --leagacy-peer-deps
 
-          # Paso 4: Construir el proyecto (ajusta el script de build si es necesario)
+          # Paso 5: Construir el proyecto (ajusta el script de build si es necesario)
           - name: Build project
             run: npm run build --legacy-peer-deps
 
-          # Paso 5: Sincronizar con S3
+          # Paso 6: Sincronizar con S3
           - name: Deploy to S3
             uses: jakejarvis/s3-sync-action@v0.5.1
             with:
