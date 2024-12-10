@@ -1,0 +1,41 @@
+name: Deploy to AWS S3
+
+on:
+  push:
+    branches:
+      - Developer
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+          # Paso 1: Checkout del código
+          - name: Checkout repository
+            uses: actions/checkout@v3
+
+          # Paso 2: Configurar Node.js (ajusta la versión según tu proyecto)
+          - name: Setup Node.js
+            uses: actions/setup-node@v3
+            with:
+              node-version: '16'
+
+          # Paso 3: Instalar dependencias
+          - name: Install dependencies
+            run: npm install
+
+          # Paso 4: Construir el proyecto (ajusta el script de build si es necesario)
+          - name: Build project
+            run: npm run build
+
+          # Paso 5: Sincronizar con S3
+          - name: Deploy to S3
+            uses: jakejarvis/s3-sync-action@v0.5.1
+            with:
+              args: --delete
+            env:
+              AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+              AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+              AWS_REGION: ${{ secrets.AWS_REGION }}
+              SOURCE_DIR: 'dist/' # Ajusta según la carpeta de salida de tu proyecto

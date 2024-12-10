@@ -35,10 +35,7 @@ export class PagesComponent {
     title: { text: 'Market Trends' }
   };
 
-  newsItems = [
-    { image: 'url1', title: 'News 1', summary: 'Summary 1', date: '2024-01-01' },
-    { image: 'url2', title: 'News 2', summary: 'Summary 2', date: '2024-02-01' }
-  ];
+
 
   onCompanySelected(companyName: string) {
     console.log(`Selected Company: ${companyName}`);

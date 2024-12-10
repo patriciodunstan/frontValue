@@ -2,15 +2,11 @@
   <div class="charts-section">
     <div class="chart-container">
       <h3>Stock Performance</h3>
-      <apx-chart #chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis"
-        [title]="chartOptions.title">
-      </apx-chart>
+      <p-chart type="line" [data]="chartOptions"></p-chart>
     </div>
     <div class="chart-container">
       <h3>Market Trends</h3>
-      <apx-chart #trendChart [series]="trendOptions.series" [chart]="trendOptions.chart" [xaxis]="trendOptions.xaxis"
-        [title]="trendOptions.title">
-      </apx-chart>
+      <p-chart type="bar" [data]="trendOptions"></p-chart>
     </div>
   </div>
 
