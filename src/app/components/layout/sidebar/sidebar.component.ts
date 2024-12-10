@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { DataMockService } from '../../../service/dataMock.service';
+import { Charts } from '../../../models/mock.interface';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,11 +9,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class SidebarComponent {
 
-  @Input() companies: { name: string }[] = [];
-  @Output() companySelected = new EventEmitter<string>();
+  sidebarVisible: boolean = false;
+  companies: string[] = [];
 
-  selectCompany(company: { name: string }) {
-    this.companySelected.emit(company.name);
+
+  constructor(private dataMockService: DataMockService) { }
+
+
+  ngOnInit() {
+    this.dataMockService.getMockData().subscribe((data: { charts: Charts }) => {
+      this.companies = data.charts.stockPerformance.categories;
+    });
   }
 
 }

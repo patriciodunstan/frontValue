@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
 import { PagesComponent } from './pages.component';
-
-
 
 import { HeaderModule } from "../layout/header/header.module";
 import { SidebarModule } from '../layout/sidebar/sidebar.module';

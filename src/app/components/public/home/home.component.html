@@ -1,24 +1,37 @@
-<main class="content-area">
-  <div class="charts-section">
-    <div class="chart-container">
-      <h3>Stock Performance</h3>
-      <p-chart type="line" [data]="chartOptions"></p-chart>
-    </div>
-    <div class="chart-container">
-      <h3>Market Trends</h3>
-      <p-chart type="bar" [data]="trendOptions"></p-chart>
-    </div>
-  </div>
+<div class="container">
+  
+  <!-- Carrusel de gráficos -->
+  <p-carousel [value]="chartsData"  [numVisible]="1"
+    [numScroll]="1" [circular]="true" >
+    <ng-template let-chart pTemplate="item">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ chart.title }}</h5>
+          <p-chart type="bar" *ngIf="chart.type === 'bar'" [data]="chart.data"></p-chart>
+          <p-chart type="line" *ngIf="chart.type === 'line'" [data]="chart.data"></p-chart>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
 
-  <div class="news-section">
-    <h3>Financial News</h3>
-    <div class="news-card" *ngFor="let news of newsItems">
-      <img [src]="news.image" alt="News Image" class="news-image">
-      <div class="news-content">
-        <h4>{{ news.title }}</h4>
-        <p>{{ news.summary }}</p>
-        <span class="news-date">{{ news.date }}</span>
+  <!-- Sección de noticias -->
+  <div class="mt-4">
+    <h3>Noticias Financieras</h3>
+    <div *ngFor="let news of newsItems" class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="news.image" class="img-fluid rounded-start" alt="Imagen noticia">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ news.title }}</h5>
+            <p class="card-text">{{ news.summary }}</p>
+            <p class="card-text">
+              <small class="text-muted">{{ news.date }}</small>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</main>
+</div>
