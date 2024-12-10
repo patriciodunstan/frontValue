@@ -22,11 +22,11 @@ jobs:
 
           # Paso 3: Instalar dependencias
           - name: Install dependencies
-            run: npm install
+            run: npm install --leagacy-peer-deps
 
           # Paso 4: Construir el proyecto (ajusta el script de build si es necesario)
           - name: Build project
-            run: npm run build
+            run: npm run build --legacy-peer-deps
 
           # Paso 5: Sincronizar con S3
           - name: Deploy to S3
