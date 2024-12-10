@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
+
+  @Input() companies: { name: string }[] = [];
+  @Output() companySelected = new EventEmitter<string>();
+
+  selectCompany(company: { name: string }) {
+    this.companySelected.emit(company.name);
+  }
 
 }
