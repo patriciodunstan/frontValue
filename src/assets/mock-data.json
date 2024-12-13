@@ -1,0 +1,193 @@
+{
+    "charts": {
+        "stockPerformance": {
+            "series": [
+                {
+                    "name": "Dividend Yield",
+                    "data": [
+                        2.5,
+                        3.1,
+                        4.2,
+                        5.0,
+                        4.8,
+                        3.9,
+                        4.1,
+                        4.5,
+                        4.7,
+                        5.2,
+                        5.5,
+                        5.8,
+                        6.0,
+                        6.2,
+                        6.5,
+                        6.8,
+                        7.0,
+                        7.2,
+                        7.5,
+                        7.8
+                    ]
+                },
+                {
+                    "name": "Price-to-Earnings Ratio",
+                    "data": [
+                        18,
+                        22,
+                        20,
+                        25,
+                        30,
+                        28,
+                        26,
+                        24,
+                        22,
+                        20,
+                        18,
+                        16,
+                        14,
+                        12,
+                        10,
+                        8,
+                        6,
+                        4,
+                        2,
+                        0
+                    ]
+                }
+            ],
+            "categories": [
+                "Empresa A",
+                "Empresa B",
+                "Empresa C",
+                "Empresa D",
+                "Empresa E",
+                "Empresa F",
+                "Empresa G",
+                "Empresa H",
+                "Empresa I",
+                "Empresa J",
+                "Empresa K",
+                "Empresa L",
+                "Empresa M",
+                "Empresa N",
+                "Empresa O",
+                "Empresa P",
+                "Empresa Q",
+                "Empresa R",
+                "Empresa S",
+                "Empresa T"
+            ]
+        },
+        "marketTrends": {
+            "series": [
+                {
+                    "name": "Growth",
+                    "data": [
+                        10,
+                        15,
+                        25,
+                        30,
+                        50,
+                        45,
+                        40,
+                        35,
+                        30,
+                        25,
+                        20,
+                        15,
+                        10,
+                        5,
+                        0,
+                        -5,
+                        -10,
+                        -15,
+                        -20,
+                        -25
+                    ]
+                }
+            ],
+            "categories": [
+                "Energía",
+                "Banca",
+                "Retail",
+                "Tecnología",
+                "Industria",
+                "Salud",
+                "Finanzas",
+                "Telecomunicaciones",
+                "Consumo",
+                "Servicios",
+                "Automotriz",
+                "Construcción",
+                "Educación",
+                "Agricultura",
+                "Minería",
+                "Transporte",
+                "Turismo",
+                "Inmobiliario",
+                "Medios",
+                "Entretenimiento"
+            ]
+        }
+    },
+    "news": [
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "CMF regula nuevos estándares para dividendos",
+            "summary": "La Comisión para el Mercado Financiero publicó nuevas regulaciones que afectan el cálculo de dividendos.",
+            "date": "2024-12-08"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Empresa B aumenta dividendos en un 15%",
+            "summary": "La empresa ha mostrado un rendimiento superior a lo esperado en el último trimestre.",
+            "date": "2024-12-01"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Nueva ley de impuestos afecta a las empresas tecnológicas",
+            "summary": "El gobierno ha implementado una nueva ley de impuestos que impactará significativamente a las empresas del sector tecnológico.",
+            "date": "2024-11-25"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Fusión de grandes bancos crea el mayor banco del país",
+            "summary": "Dos de los mayores bancos del país han anunciado su fusión, creando la mayor entidad bancaria del país.",
+            "date": "2024-11-20"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Empresa C lanza nuevo producto innovador",
+            "summary": "La empresa ha lanzado un nuevo producto que promete revolucionar el mercado.",
+            "date": "2024-11-15"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Mercado inmobiliario muestra signos de recuperación",
+            "summary": "El mercado inmobiliario ha comenzado a mostrar signos de recuperación tras varios años de declive.",
+            "date": "2024-11-10"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Aumento en el precio del petróleo afecta a las aerolíneas",
+            "summary": "El reciente aumento en el precio del petróleo ha tenido un impacto negativo en las aerolíneas.",
+            "date": "2024-11-05"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Sector retail experimenta crecimiento en ventas online",
+            "summary": "El sector retail ha experimentado un crecimiento significativo en las ventas online durante el último trimestre.",
+            "date": "2024-11-01"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Nueva regulación ambiental afecta a la industria minera",
+            "summary": "La nueva regulación ambiental impuesta por el gobierno afectará significativamente a la industria minera.",
+            "date": "2024-10-25"
+        },
+        {
+            "image": "../assets/img/imagennews.svg",
+            "title": "Empresa D anuncia plan de expansión internacional",
+            "summary": "La empresa ha anunciado un ambicioso plan de expansión internacional para los próximos cinco años.",
+            "date": "2024-10-20"
+        }
+    ]
+}

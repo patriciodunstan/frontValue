@@ -1,24 +1,36 @@
-<main class="content-area">
+<div class="home-container">
+  <!-- Sección de gráficos (izquierda) -->
   <div class="charts-section">
     <div class="chart-container">
-      <h3>Stock Performance</h3>
-      <p-chart type="line" [data]="chartOptions"></p-chart>
+      <h2>{{chartsData[0].title}}</h2>
+      <p-chart [type]="chartsData[0].type" [data]="chartsData[0].data" [options]="chartsData[0].options">
+      </p-chart>
     </div>
     <div class="chart-container">
-      <h3>Market Trends</h3>
-      <p-chart type="bar" [data]="trendOptions"></p-chart>
+      <h2>{{chartsData[1].title}}</h2>
+      <p-chart [type]="chartsData[1].type" [data]="chartsData[1].data" [options]="chartsData[1].options">
+      </p-chart>
     </div>
   </div>
 
+  <!-- Sección de noticias (derecha) -->
   <div class="news-section">
-    <h3>Financial News</h3>
-    <div class="news-card" *ngFor="let news of newsItems">
-      <img [src]="news.image" alt="News Image" class="news-image">
-      <div class="news-content">
-        <h4>{{ news.title }}</h4>
-        <p>{{ news.summary }}</p>
-        <span class="news-date">{{ news.date }}</span>
-      </div>
+    <h2>Últimas Noticias</h2>
+    <div class="news-list">
+      <mat-card *ngFor="let news of newsList" class="news-card">
+        <mat-card-header>
+          <mat-card-title>{{news.title}}</mat-card-title>
+          <mat-card-subtitle>{{news.date | date}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="news.image" [alt]="news.title">
+        <mat-card-content>
+          <p>{{news.summary}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button color="primary">Leer más</button>
+          <button mat-button>Compartir</button>
+        </mat-card-actions>
+      </mat-card>
     </div>
   </div>
-</main>
+</div>

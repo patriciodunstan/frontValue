@@ -1,44 +1,46 @@
-import {Component } from '@angular/core';
-
-
+import { Component, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
+import { MatSidenavModule, MatSidenav } from '@angular/material/sidenav';
+import { HeaderComponent } from '../layout/header/header.component';
+import { SidebarComponent } from '../layout/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-pages',
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    MatSidenavModule,
+    HeaderComponent,
+    SidebarComponent
+  ],
   templateUrl: './pages.component.html',
-  styleUrls: ['./pages.component.scss'],
+  styleUrls: ['./pages.component.css']
 })
-export class PagesComponent {
+export class PagesComponent implements AfterViewInit {
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  menuShow: boolean = true;
 
+  constructor(private cdr: ChangeDetectorRef) { }
 
-  constructor(
-  ){
-
+  ngAfterViewInit() {
+    setTimeout(() => {
+      if (this.sidenav) {
+        this.sidenav.open();
+        this.cdr.detectChanges();
+      }
+    });
   }
 
-  companies = [
-    { name: 'Company A' },
-    { name: 'Company B' },
-    { name: 'Company C' }
-  ];
-
-  chartOptions = {
-    series: [/* data */],
-    chart: { type: 'line' },
-    xaxis: { categories: ['Jan', 'Feb', 'Mar'] },
-    title: { text: 'Stock Performance' }
-  };
-
-  trendOptions = {
-    series: [/* data */],
-    chart: { type: 'bar' },
-    xaxis: { categories: ['Trend A', 'Trend B', 'Trend C'] },
-    title: { text: 'Market Trends' }
-  };
-
-
-
-  onCompanySelected(companyName: string) {
-    console.log(`Selected Company: ${companyName}`);
+  toggleSidenav() {
+    this.menuShow = !this.menuShow;
+    if (this.sidenav) {
+      this.sidenav.toggle();
+    }
   }
 
+  getState(outlet: RouterOutlet) {
+    return outlet.isActivated ? outlet.activatedRoute : '';
+  }
 }
