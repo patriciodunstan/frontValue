@@ -1,7 +1,12 @@
-<div class="finance-app-container">
-  <app-header></app-header>
-  <div class="main-content">
-    <app-sidebar id="sidebav"></app-sidebar>
-    <app-home id="home" ></app-home>
-  </div>
-</div>
+<app-header></app-header>
+<mat-sidenav-container class="app-container">
+  <mat-sidenav #sidenav mode="side" [opened]="menuShow" class="app-sidenav">
+    <app-sidebar (menuToggle)="toggleSidenav()"></app-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

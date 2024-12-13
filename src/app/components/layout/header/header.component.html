@@ -1,9 +1,14 @@
-<header class="app-header">
-  <div class="logo-section">
-    <img src="https://images.unsplash.com/photo-1633409361618-c73427e4e206" alt="Company Logo" class="logo">
+<mat-toolbar class="header-toolbar">
+  <div class="header-content">
+    <!-- Logo -->
+    <div class="logo-container">
+      <img [src]="logoUrl" class="logo-img" [alt]="'Logo'">
+    </div>
+
+    <!-- Perfil de usuario -->
+    <div class="user-profile">
+      <span class="username">{{ username }}</span>
+      <img [ngSrc]="profilePicUrl" width="40" height="40" class="profile-pic" [alt]="username">
+    </div>
   </div>
-  <div class="user-section">
-    <span class="username">John Doe</span>
-    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d" alt="User Profile" class="profile-pic">
-  </div>
-</header>
+</mat-toolbar>

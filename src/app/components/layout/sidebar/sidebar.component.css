@@ -1,9 +1,14 @@
-.sidenav {
-  width: 250px;
-  background: #f8f9fa;
-  padding: 1rem 0;
+.sidebar-content {
   height: 100%;
-  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.nav-menu {
+  flex: 1;
 }
 
 .nav-list {
@@ -12,23 +17,56 @@
   margin: 0;
 }
 
-.nav-header {
-  padding: 1rem 1.5rem;
-  font-weight: bold;
-  color: #6c757d;
-  font-size: 0.9rem;
+.nav-item {
+  margin: 0.25rem 0;
 }
 
-.nav-item a {
-  padding: 0.75rem 1.5rem;
-  display: block;
-  color: #495057;
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.87);
   text-decoration: none;
-  transition: background-color 0.3s;
 }
 
-.nav-item a:hover,
-.nav-item a.active {
-  background-color: #e9ecef;
-  border-left: 4px solid #0d6efd;
+.nav-link mat-icon {
+  margin-right: 16px;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.active-link {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: #3f51b5;
+}
+
+.nav-separator {
+  margin: 1rem 0;
+  border-top: 1px solid #dee2e6;
+}
+
+.section-title {
+  padding: 16px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.companies-section {
+  margin-top: 16px;
+}
+
+.hamburger-button {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .sidebar-content {
+    width: 250px;
+  }
 }

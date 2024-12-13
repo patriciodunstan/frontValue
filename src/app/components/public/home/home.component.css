@@ -1,24 +1,99 @@
-/* Estilos adicionales para mejorar la apariencia */
-.card {
-  margin-bottom: 1.5rem;
+.home-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  padding: 24px;
+  height: calc(100vh - 84px);
 }
 
-.card-body {
-  padding: 1.5rem;
+.charts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.card-title {
-  margin-bottom: 1rem;
+.chart-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: calc(50% - 12px);
+  display: flex;
+  flex-direction: column;
 }
 
-.img-fluid {
-  max-width: 100%;
-  height: auto;
+.chart-container h2 {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.87);
 }
 
-/* Estilos responsivos */
-@media (max-width: 992px) {
-  .container {
-    padding: 0 1rem;
+.chart-container p-chart {
+  flex: 1;
+  min-height: 0;
+}
+
+.news-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.news-section h2 {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-card {
+  margin-bottom: 16px;
+}
+
+.news-card mat-card-title {
+  font-size: 1rem;
+}
+
+.news-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card mat-card-content {
+  padding: 16px 0;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .home-container {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-container {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .chart-container,
+  .news-section {
+    padding: 16px;
+  }
+
+  .news-card img {
+    height: 150px;
   }
 }
