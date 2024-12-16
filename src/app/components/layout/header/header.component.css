@@ -30,8 +30,16 @@
 }
 
 .header-toolbar {
-  background-color: white;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 .header-content {
@@ -54,14 +62,15 @@
 }
 
 .user-profile {
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 1rem;
 }
 
 .username {
   font-size: 0.9rem;
   color: #333;
+  margin-right: 0.5rem;
 }
 
 .profile-pic {
@@ -69,4 +78,12 @@
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.card {
+  margin-top: 5px;
+}
+
+.card-body {
+  color: #333;
 }

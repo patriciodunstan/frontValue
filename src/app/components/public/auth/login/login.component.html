@@ -1,0 +1,19 @@
+<div class="login-container">
+  <h2>Iniciar Sesión</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email*</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contraseña*</mat-label>
+      <input matInput type="password" formControlName="password" required>
+    </mat-form-field>
+
+    <div class="button-container">
+      <a href="/register" class="register-link">Registrarse</a>
+      <button mat-raised-button color="primary"  type="submit">Iniciar Sesión</button>
+    </div>
+  </form>
+</div>

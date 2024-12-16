@@ -1,0 +1,18 @@
+<div class="register-container ">
+  <h2>Registrarse</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="d-flex flex-column w-100">
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput  name="email" required>
+    </mat-form-field>
+    <mat-form-field class="w-100" appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input matInput name="password" type="password" formControlName="password" required>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Confirmar Contraseña</mat-label>
+      <input matInput class="w-100" name="confirmPassword" type="password" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Registrarse</button>
+  </form>
+</div>

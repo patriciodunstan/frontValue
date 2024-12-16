@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { ChartModule } from 'primeng/chart';
 import { Charts, ChartSeries, NewsItem } from '../../../models/mock.interface';
 import { DataMockService } from '../../../service/dataMock.service';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 // Definir el tipo para los charts
 type ChartType = 'bar' | 'line' | 'scatter' | 'bubble' | 'pie' | 'doughnut' | 'polarArea' | 'radar';
@@ -28,12 +30,19 @@ export class HomeComponent implements OnInit {
   chartsData: { title: string; data: any; type: ChartType; options: any }[] = [];
   newsList: NewsItem[] = [];
 
-  constructor(private dataMockService: DataMockService) { }
+  constructor(private dataMockService: DataMockService, private breakpointObserver: BreakpointObserver, private router: Router) { }
 
   ngOnInit() {
     this.dataMockService.getMockData().subscribe((data: any) => {
       this.prepareChartsData(data.charts);
       this.newsList = data.news;
+    });
+
+    this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Tablet]).subscribe(result => {
+      console.log('Breakpoint result:', result.matches);
+      if (result.matches) {
+        this.router.navigate(['/not-found']);
+      }
     });
   }
 

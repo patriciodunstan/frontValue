@@ -1,14 +1,22 @@
 <mat-toolbar class="header-toolbar">
   <div class="header-content">
-    <!-- Logo -->
     <div class="logo-container">
       <img [src]="logoUrl" class="logo-img" [alt]="'Logo'">
     </div>
 
-    <!-- Perfil de usuario -->
-    <div class="user-profile">
-      <span class="username">{{ username }}</span>
-      <img [ngSrc]="profilePicUrl" width="40" height="40" class="profile-pic" [alt]="username">
+    <div class="user-section">
+      <div class="user-profile" data-bs-toggle="collapse" data-bs-target="#userOptions" aria-expanded="false" aria-controls="userOptions">
+        <span class="username">{{ isLoggedIn ? username : 'Invitado' }}</span>
+        <img [src]="profilePicUrl" width="40" height="40" class="profile-pic" [alt]="username">
+      </div>
+
+      <div class="accordion-collapse collapse" id="userOptions">
+        <div class="card card-body">
+          <a *ngIf="!isLoggedIn" href="/login" class="btn btn-link">Iniciar Sesión</a>
+          <a *ngIf="!isLoggedIn" href="/register" class="btn btn-link">Registrarse</a>
+          <a *ngIf="isLoggedIn" (click)="logout()" class="btn btn-link">Cerrar Sesión</a>
+        </div>
+      </div>
     </div>
   </div>
 </mat-toolbar>

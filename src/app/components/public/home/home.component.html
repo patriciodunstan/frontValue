@@ -1,15 +1,9 @@
 <div class="home-container">
   <!-- Sección de gráficos (izquierda) -->
   <div class="charts-section">
-    <div class="chart-container">
-      <h2>{{chartsData[0].title}}</h2>
-      <p-chart [type]="chartsData[0].type" [data]="chartsData[0].data" [options]="chartsData[0].options">
-      </p-chart>
-    </div>
-    <div class="chart-container">
-      <h2>{{chartsData[1].title}}</h2>
-      <p-chart [type]="chartsData[1].type" [data]="chartsData[1].data" [options]="chartsData[1].options">
-      </p-chart>
+    <div class="chart-container" *ngFor="let chart of chartsData">
+      <h2>{{chart.title}}</h2>
+      <p-chart [type]="chart.type" [data]="chart.data" [options]="chart.options"></p-chart>
     </div>
   </div>
 

@@ -1,30 +1,30 @@
 .home-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  padding: 24px;
+  grid-template-columns: 80% 20%;
+  gap: 16px;
+  padding: 16px;
   height: calc(100vh - 84px);
 }
 
 .charts-section {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
 }
 
 .chart-container {
   background: white;
   border-radius: 8px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: calc(50% - 12px);
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .chart-container h2 {
-  margin-bottom: 16px;
-  font-size: 1.25rem;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
   color: rgba(0, 0, 0, 0.87);
 }
 

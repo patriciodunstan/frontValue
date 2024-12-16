@@ -31,8 +31,6 @@ export class SidebarComponent implements OnInit {
 
   menuItems = [
     { path: 'home', icon: 'home', label: 'Home' },
-    { path: 'dashboard', icon: 'dashboard', label: 'Dashboard' },
-    { path: 'reports', icon: 'assessment', label: 'Reportes' }
   ];
 
   constructor(
