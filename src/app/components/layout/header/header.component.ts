@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
+
+
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { AuthService } from '../../../service/auth.service';
-import { NgIf } from '@angular/common';
+import { AuthenticationService } from '../../../service/authentication.service';
+
 
 @Component({
   selector: 'app-header',
@@ -21,9 +24,8 @@ export class HeaderComponent {
   profilePicUrl: string = 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=40&h=40&q=80'; 
   username: string = 'John Doe';
   isMenuCollapsed: boolean = true;
-
-  constructor(private authService: AuthService) {
-    this.isLoggedIn = this.authService.isAuthenticated();
+  constructor(private authService: AuthenticationService) {
+    this.isLoggedIn = this.authService.checkLoginStatus();
   }
 
   toggleMenu() {

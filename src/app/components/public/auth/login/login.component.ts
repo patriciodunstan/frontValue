@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../../service/auth.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { ToastrService } from 'ngx-toastr';
+import { AuthenticationService } from '../../../../service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -25,9 +26,10 @@ export class LoginComponent {
   loginForm!: FormGroup;
 
   constructor(
-    private authService: AuthService, 
+    private authService: AuthenticationService, 
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private toastr: ToastrService
   ) {
     this.loginForm = this.fb.group({
       email: new FormControl(''),
@@ -36,11 +38,12 @@ export class LoginComponent {
   }
 
   onLogin() {
-    if (this.authService.login(this.email, this.password)) {
-      console.log('Iniciando sesión con:', this.email);
+    this.authService.loginWithEmail(this.email, this.password).then(() => {
+      this.toastr.success('Iniciando sesión con:', this.email);
       this.router.navigate(['/home']);
-    } else {
+    }).catch(() => {
+      this.toastr.error('Credenciales incorrectas.');
       console.error('Credenciales incorrectas.');
-    }
+    });
   }
 }
