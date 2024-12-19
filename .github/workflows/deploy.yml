@@ -31,7 +31,7 @@ jobs:
 
       # Paso 4: Instalar dependencias
       - name: Install dependencies
-        run: npm install --leagacy-peer-deps
+        run: npm install --legacy-peer-deps
 
       # Paso 5: Construir el proyecto (ajusta el script de build si es necesario)
       - name: Build project
