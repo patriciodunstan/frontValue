@@ -14,14 +14,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Paso 2: Cache de dependencias de Node.js
-      - name: Cache Node.js modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+      # Paso 2: Limpiar el entorno
+      - name: Clean environment
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+          rm -rf dist
 
       # Paso 3: Configurar Node.js (ajusta la versión según tu proyecto)
       - name: Setup Node.js
